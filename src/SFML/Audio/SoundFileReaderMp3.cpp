@@ -26,6 +26,11 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #define MINIMP3_IMPLEMENTATION // Minimp3 control define, places implementation in this file.
+#define NOMINMAX          // To avoid windows.h and std::min issue
+#define MINIMP3_NO_STDIO  // Minimp3 control define, eliminate file manipulation code which is useless here
+#include <minimp3_ex.h>
+#undef NOMINMAX
+#undef MINIMP3_NO_STDIO
 #include <SFML/Audio/SoundFileReaderMp3.hpp>
 #include <SFML/System/MemoryInputStream.hpp>
 #include <SFML/System/Err.hpp>
